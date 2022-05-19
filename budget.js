@@ -110,6 +110,41 @@ addIncomeBtn.addEventListener('click', function () {
     clearInputs([incomeAmount, incomeTitle]);
 });
 
+incomeListEl.addEventListener("click",deleteOrEdit);
+expenseListEl.addEventListener("click",deleteOrEdit);
+allListEl.addEventListener("click",deleteOrEdit);
+
+function deleteOrEdit(event){
+
+    const targetBtn = event.target;
+    const entry = targetBtn.parentNode;
+
+    if(targetBtn.id == "delete"){
+        deleteEntry(entry);
+        
+    }else if(targetBtn.id == "edit"){
+        editEntry(entry);
+        
+    }
+}
+
+function deleteEntry(entry){
+    ENTRY_LIST.splice(entry.id,1);
+    updateUI();
+}
+function editEntry(entry){
+
+    let ENTRY = ENTRY_LIST[entry.id];
+
+    if(ENTRY.type == "income"){
+        incomeTitle.value = ENTRY.title;
+        incomeAmount.value = ENTRY.amount;
+    }else if(ENTRY.type == "expense"){
+        expenseTitle.value = ENTRY.title;
+        expenseAmount.value = ENTRY.amount;
+    }
+    deleteEntry(entry);
+}
 //Main functions
 
 function updateUI() {
