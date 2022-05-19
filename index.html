@@ -20,7 +20,7 @@
                     <b>Balance</b>
                 </div>
                 <div class="value">
-                    <small>&#8377;</small>1000
+                    <small>&#8377;</small>0
                 </div>
             </div>
 
@@ -30,7 +30,7 @@
                         <b>Income</b>
                     </div>
                     <div class="income-total">
-                        <small>&#8377;</small>1000
+                        <small>&#8377;</small>0
                     </div>
                 </div>
                 <div class="chart"></div>
@@ -39,7 +39,7 @@
                         <b>Outcome</b>
                     </div>
                     <div class="outcome-total">
-                        <small>&#8377;</small>1000
+                        <small>&#8377;</small>0
                     </div>
                 </div>
             </div>
@@ -49,19 +49,21 @@
                 <b>Dashboard</b>
             </div>
             <div class="toggle">
-                <div class="tab1">Expense</div>
+                <div class="tab1 ">Expense</div>
                 <div class="tab2 active">Income</div>
                 <div class="tab3">All</div>
             </div>
-            <div id="income">
-                <ul class="list"></ul>
+            <div  id="income">
+                <ul class="list">
+        
+                </ul>
                 <div class="input">
                     <input type="text" id="income-title-input" name="title" placeholder="Title">
                     <input type="number" id="income-amount-input" name="amount" placeholder="&#8377;0">
                     <div class="add-income"><img src="icon/plus.png" alt=""></div>
                 </div>
             </div>
-            <div class="hide" id="expense">
+            <div class = 'hide' id="expense">
                 <ul class="list"></ul>
                 <div class="input">
                 <input type="text" id="expense-title-input" name="title" placeholder="Title">
@@ -69,7 +71,9 @@
                     <div class="add-expense"><img src="icon/plus.png" alt=""></div>
                 </div>
             </div>
-            <div class="all"></div>
+            <div class="hide" id="all">
+                <ul class="list"></ul>
+            </div>
         </div>
     </div>
     <script src="/budget.js"></script>
