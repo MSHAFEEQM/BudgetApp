@@ -27,12 +27,14 @@ const expenseAmount = document.querySelector("#expense-amount-input")
 
 //variables
 
-let ENTRY_LIST = [];
+let ENTRY_LIST ;
 
 let balance = 0, income = 0, expense = 0;
 //Initial setup
 
-//updateUI();
+ENTRY_LIST = JSON.parse(localStorage.getItem("entry_list")) || [];
+
+updateUI();
 
 //Toggling
 
@@ -120,6 +122,7 @@ function updateUI() {
 
     if (income >= expense) {
         sign = "&#8377;";
+        balanceEl.style.color = "#fff";
     } else {
         sign = "-&#8377;";
         balanceEl.style.color = "#f00";
@@ -140,7 +143,9 @@ function updateUI() {
         showEntry(allListEl,entry.type,entry.title,entry.amount,index);
     });
 
-    
+    updateChart(income,expense);
+
+    localStorage.setItem("entry_list",JSON.stringify(ENTRY_LIST));
 
 }
 
